@@ -28,8 +28,8 @@ def ctrp_hist(adata, groups = None, bins = 100, fname = None,ctrp = 'ctrp', figs
         plt.show()
     else: plt.savefig(f'./figures/{fname}.pdf')
 
-def ctrp(adata,basis = 'umap', ctrp = 'ctrp'):
+def ctrp(adata,basis = 'umap', ctrp = 'ctrp', figsize = (6,6)):
     _adata = adata[adata.obs['absorbing'] == True,]
     ax = scv.pl.scatter(adata, color=ctrp, show=False, color_map='jet', alpha=0.5, basis=basis, dpi=350,
-                        zorder=1)
+                        zorder=1,figsize=figsize)
     scv.pl.scatter(_adata, color='black', size=30, ax=ax, zorder=2, alpha=1, basis=basis)

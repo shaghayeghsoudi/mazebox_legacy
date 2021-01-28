@@ -11,6 +11,7 @@ import os.path as op
 
 def archetype_diagrams(adata, sig_matrix, color_dict, groupby, color= 'Phenotype_filtered', score_name = '_Z_Score',multiplier = 1000,mean_only = False,
                        order = None, figsize = (4,4), arrows = False, sizes = None,alpha = .3, s = 30, norm = 'max',scale = 1,cmap = 'viridis',
+                       vmin = -1, vmax = 1,
                        grid = True, num_steps=50):
     # cp = custom_palette[2:]
     # color_dict = {'SCLC-Y': cp[4], 'SCLC-A': cp[0], 'SCLC-A2': cp[1], 'SCLC-N': cp[2], 'SCLC-P': cp[3],
@@ -31,7 +32,7 @@ def archetype_diagrams(adata, sig_matrix, color_dict, groupby, color= 'Phenotype
             else:
                 _archetype_diagram_no_arrows(_adata, score_name,subtypes,  color, figsize, n_types, order, n_samples,
                                              multiplier, g=g, sizes = sizes, alpha = alpha, s = s, color_dict = color_dict,
-                                             norm = norm,cmap = cmap,)
+                                             norm = norm,cmap = cmap,vmax = vmax, vmin = vmin)
     else:
         _adata = adata
         n_samples = len(_adata.obs_names)
@@ -43,7 +44,7 @@ def archetype_diagrams(adata, sig_matrix, color_dict, groupby, color= 'Phenotype
         else:
             _archetype_diagram_no_arrows(_adata, score_name, subtypes, color, figsize, n_types, order, n_samples,
                                          multiplier,  sizes=sizes, alpha=alpha, s=s, color_dict=color_dict,
-                                         norm=norm,cmap = cmap,)
+                                         norm=norm,cmap = cmap,vmax = vmax, vmin = vmin)
 def _archetype_diagram_with_arrows(_adata, score_name,subtypes, color, figsize, n_types, color_dict, order,multiplier, g = 'All',cmap = 'viridis',
                                    norm = 'max', alpha = .3, s = 3, width = 0.0005, sizes = 3, grid = True, num_steps = 50,scale = 1,
                                    mean_only = False):
@@ -187,14 +188,15 @@ def _archetype_diagram_with_arrows(_adata, score_name,subtypes, color, figsize, 
                 plt.arrow(X_df_data.T[i][0], X_df_data.T[i][1],dx[i]*multiplier, dy[i]*multiplier,
                           fc="lightgrey", ec="lightgrey", alpha = alpha, width = width)
 
-    plt.legend()
+    # plt.legend()
     plt.title(g)
     plt.axis('tight')
     plt.show()
     plt.close()
 
 def _archetype_diagram_no_arrows(_adata, score_name, subtypes, color, figsize, n_types, order, n_samples, multiplier, g='All',
-                                 sizes = None, alpha = .3, s = 30, color_dict = None, norm = 'scale', cmap="viridis"):
+                                 sizes = None, alpha = .3, s = 30, color_dict = None, norm = 'scale', cmap="viridis",
+                                 vmin = -1, vmax = 1):
     # X = subtype scores for each subtype (pd dataframe)
     X = _adata.obs[[f"{x}{score_name}" for x in subtypes]]
     top = X.sum().sort_values(ascending=False)[:3]  # return a list of n largest element
@@ -245,10 +247,10 @@ def _archetype_diagram_no_arrows(_adata, score_name, subtypes, color, figsize, n
         data = data.sort_values(by = 'C', ascending=False)
 
         plt.scatter(data['X'], data['Y'], c=data['C'], zorder=3, alpha=alpha, s=s)
-        plt.legend()
+        # plt.legend()
     else:
         c = colors
-        plt.scatter(X_df_data[0], X_df_data[1], c=c, zorder=3, alpha=alpha, s=s, cmap = cmap)
+        plt.scatter(X_df_data[0], X_df_data[1], c=c, zorder=3, alpha=alpha, s=s, cmap = cmap, vmin = vmin, vmax = vmax)
         plt.colorbar()
 
     if type(sizes) == int:
@@ -263,27 +265,27 @@ def _archetype_diagram_no_arrows(_adata, score_name, subtypes, color, figsize, n
     plt.axis('tight')
     plt.show()
     plt.close()
-    fig = plt.figure(figsize=figsize)
-
-    ax = fig.add_subplot()
-    colors = _adata.obs[color].values
-    if type(colors[0]) == str:
-        c = [color_dict[i] for i in colors]
-    else:
-        c = colors
-    sns.kdeplot(X_df_data[0], X_df_data[1], cmap="Reds", shade=True, bw=.15)
-    if type(sizes) == int:
-        plt.scatter(X_transformed[0, -n_types:], X_transformed[1, -n_types:], c=[color_dict[i] for i in order],
-                    zorder=2, s=sizes)
-    else:
-        sizes = [Counter(colors)[i] * multiplier / n_samples for i in order]
-        print(sizes)
-        plt.scatter(X_transformed[0, -n_types:], X_transformed[1, -n_types:], c=[color_dict[i] for i in order],
-                    zorder=2, s=sizes)
-    plt.title(g)
-    plt.axis('tight')
-    plt.show()
-    plt.close()
+    # fig = plt.figure(figsize=figsize)
+    #
+    # ax = fig.add_subplot()
+    # colors = _adata.obs[color].values
+    # if type(colors[0]) == str:
+    #     c = [color_dict[i] for i in colors]
+    # else:
+    #     c = colors
+    # sns.kdeplot(X_df_data[0], X_df_data[1], cmap="Reds", shade=True, bw=.15)
+    # if type(sizes) == int:
+    #     plt.scatter(X_transformed[0, -n_types:], X_transformed[1, -n_types:], c=[color_dict[i] for i in order],
+    #                 zorder=2, s=sizes)
+    # else:
+    #     sizes = [Counter(colors)[i] * multiplier / n_samples for i in order]
+    #     print(sizes)
+    #     plt.scatter(X_transformed[0, -n_types:], X_transformed[1, -n_types:], c=[color_dict[i] for i in order],
+    #                 zorder=2, s=sizes)
+    # plt.title(g)
+    # plt.axis('tight')
+    # plt.show()
+    # plt.close()
 
 
 
@@ -446,3 +448,12 @@ def twodimplot_tumor(data, veldata, adata, gene_sig,celltype1, celltype2, save=F
             else:
                 plt.show()
                 plt.close()
+
+def archetype_score_boxplots(adata, groupby, fname, cp = ['#fc8d62', '#66c2a5', '#FFD43B', '#8da0cb', '#e78ac3'],
+    subtypes = ['SCLC-A', 'SCLC-A2', 'SCLC-N', 'SCLC-P', 'SCLC-Y']):
+
+    for x, i in enumerate(subtypes):
+        adata.obs[f"{i}_Score_pos"] = adata.obs[f"{i}_Score"] * (adata.obs[f"{i}_Score"] > 0)
+        plt.figure(figsize=(3, 3))
+        sns.boxplot(data=adata.obs, x=groupby, y=f"{i}_Score_pos", color=cp[x])
+        plt.savefig(f"./figures/{i}_{fname}.pdf")

@@ -259,3 +259,38 @@ def transform_vel(tumor, gene_sig, norm = False, scale = False, scaling = None, 
         out = out / scaling
     # out = np.arcsinh(out)
     return out, gene_sig, tumor
+
+def phenotyping_recipe(adata, sig_matrix,groupby, unlog = False, type = None, scale = False, scaling = None, spliced = False, eps = 0.001):
+    data, sig_matrix1, adata_small, lanorm = transform_tumor_space(adata, sig_matrix, unlog=False, scale=False,
+                                                                         type=None)
+    data_vel, sig_matrix2, adata_small = transform_vel(adata_small, sig_matrix1, scale=False, lanorm=lanorm)
+    data.index = adata_small.obs_names
+    data.columns = sig_matrix.columns
+    for s in data:
+        adata_small.obs[f"{s}_Score"] = data[s]
+        adata.obs[f"{s}_Score"] = data[s]
+
+    data_vel.index = adata_small.obs_names
+    data_vel.columns = sig_matrix.columns
+    for s in data_vel:
+        adata_small.obs[f"{s}_Score_t1"] = data_vel[s] + data[s]
+        adata.obs[f"{s}_Score_t1"] = data_vel[s] + data[s]
+
+    # filtered phenotype
+    pheno = []
+
+    for i, r in data.iterrows():
+        test = r * (r > 0)
+        if test.max() < .1:
+            pheno.append('None')
+
+        elif test.max() > .5:
+            #     if (test/test.sum()).max()>.9:
+            pheno.append(data.columns[test.argmax()])
+        else:
+            pheno.append('Generalist')
+    adata_small.obs['Phenotype'] = pheno
+    adata_small.obs[groupby] = adata_small.obs[groupby].astype('category')
+    adata.obs['Phenotype'] = adata_small.obs['Phenotype']
+    return adata, adata_small, sig_matrix2
+
