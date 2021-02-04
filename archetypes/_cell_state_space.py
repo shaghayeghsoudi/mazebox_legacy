@@ -176,9 +176,6 @@ def transform_ref_space(ref_map, gene_sig, ref_state_df, norm = False, scale = F
     else: return data
 
 def transform_tumor_space(adata, gene_sig, unlog = False, type = None, scale = False, scaling = None, spliced = False, eps = 0.001):
-    if np.all(np.linalg.norm(gene_sig, axis = 0) != 1-eps):
-        gene_sig = gene_sig / np.linalg.norm(gene_sig, axis=0)
-
     tumor = adata.copy()
     if unlog == True:
         tumor.X = np.expm1(tumor.X)
@@ -190,6 +187,9 @@ def transform_tumor_space(adata, gene_sig, unlog = False, type = None, scale = F
         # if num % 1000 == 0:
         #     print(num)
     gene_sig = gene_sig.loc[gene_sig.index.isin(glist_keep)]
+    if np.all(np.linalg.norm(gene_sig, axis = 0) != 1-eps):
+
+        gene_sig = gene_sig / np.linalg.norm(gene_sig, axis=0)
     print("Gene signature matrix now has shape: ", gene_sig.shape)
     tumor = tumor[:, gene_sig.index.values]
     print("Tumor data shortened to genes in gene list...")
@@ -260,10 +260,11 @@ def transform_vel(tumor, gene_sig, norm = False, scale = False, scaling = None, 
     # out = np.arcsinh(out)
     return out, gene_sig, tumor
 
-def phenotyping_recipe(adata, sig_matrix,groupby, unlog = False, type = None, scale = False, scaling = None, spliced = False, eps = 0.001):
-    data, sig_matrix1, adata_small, lanorm = transform_tumor_space(adata, sig_matrix, unlog=False, scale=False,
-                                                                         type=None)
-    data_vel, sig_matrix2, adata_small = transform_vel(adata_small, sig_matrix1, scale=False, lanorm=lanorm)
+def phenotyping_recipe(adata, sig_matrix,groupby, unlog = False, type = None, scale = False, eps = 0.001):
+    sig_matrix = sig_matrix / np.linalg.norm(sig_matrix, axis=0)
+    data, sig_matrix1, adata_small, lanorm = transform_tumor_space(adata, sig_matrix, unlog=unlog, scale=scale,
+                                                                         type=type)
+    data_vel, sig_matrix2, adata_small = transform_vel(adata_small, sig_matrix1, scale=scale, lanorm=lanorm)
     data.index = adata_small.obs_names
     data.columns = sig_matrix.columns
     for s in data:

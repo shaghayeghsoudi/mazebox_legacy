@@ -1,7 +1,7 @@
 import dropkick as dk
 import scvelo as scv
 import scanpy as sc
-from _settings import settings
+# from _settings import settings
 import numpy as np
 import scrublet
 
