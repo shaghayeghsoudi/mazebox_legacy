@@ -1,0 +1,41 @@
+﻿Enriched Gene Sets,Log-Mean Difference,P-Value,Archetype
+Forebrain neuron fate commitment,0.777,0.0047,SCLC-A
+Thalamus development,0.363,0.0085,SCLC-A
+Regulation of long-term synaptic depression,0.5594,0.0047,SCLC-A
+Positive regulation of oligodendrocyte differentiation,0.297,0.017,SCLC-A
+Dendritic transport,0.256,0.017,SCLC-A
+G0 to G1 transition,0.185,0.0032,SCLC-A
+Histamine secretion,0.74,0.00027,SCLC-A2
+CD8+ Alpha Beta T Cell Differentiation,0.661,0.00017,SCLC-A2
+Detection of other organism,0.641,0.00041,SCLC-A2
+Tolerance induction,0.604,0.0057,SCLC-A2
+Detection of external biotic stimulus,0.577,0.000798,SCLC-A2
+Negative regulation of Alpha Beta T Cell Proliferation,0.502,0.0018,SCLC-A2
+Negative regulation of B cell apoptotic process,0.501,0.0022,SCLC-A2
+Regulation of T cell mediated cytotoxicity,0.495,0.0085,SCLC-A2
+Synapse maturation,0.80651,0.00034,SCLC-N
+Oxygen transport,0.77952,0.00408,SCLC-N
+Synaptic plasticity,0.77358,0.00027,SCLC-N
+Response to L glutamate,0.65875,0.00021,SCLC-N
+Locomotory exploration behavior,0.51113,0.0077,SCLC-N
+Modification of postsynaptic actin cytoskeleton,0.45939,0.0031,SCLC-N
+Response to electrical stimulus,0.45091,0.00015,SCLC-N
+Neuromuscular synaptic transmission,0.43283,0.0016,SCLC-N
+Detoxification of inorganic compound,1.37,0.0014,SCLC-P
+Regulation of glucocorticoid metabolic process,0.873,0.00025,SCLC-P
+L Ascorbic Acid metabolic process,0.528,0.0011,SCLC-P
+Cardiolipid biosynthetic process,0.528,0.00022,SCLC-P
+AMP metabolic process,0.418,0.0017,SCLC-P
+Mitochondrial respiratory chain complex assembly,0.233,0.0042,SCLC-P
+Glycolysis,0.21,0.012,SCLC-P
+Base excision repair,0.218,0.002,SCLC-P
+Antigen processing and presentation of peptide antigen,1.6162,0.0007,SCLC-Y
+,,,SCLC-Y
+Response to interferon alpha,1.4831,0.00015,SCLC-Y
+Negative regulation of ECM organization,1.3279,0.0017,SCLC-Y
+Positive regulation of cell migration involved in sprouting angiogenesis,1.2126,0.00005,SCLC-Y
+,,,SCLC-Y
+Endodermal cell differentiation,1.186,0.00005,SCLC-Y
+Inflammatory response to wounding,1.1685,0.00018,SCLC-Y
+Collagen biosynthetic process,1.0459,0.000056,SCLC-Y
+Regulation of programmed necrotic cell death,0.897,0.00014,SCLC-Y

@@ -175,6 +175,34 @@ def transform_ref_space(ref_map, gene_sig, ref_state_df, norm = False, scale = F
     # data = np.arcsinh((data))
     else: return data
 
+
+def transform_tumor_space_csv(tumor, gene_sig, unlog=False, type=None, scale=False, scaling=None, spliced=False,
+                              eps=0.001):
+    if unlog == True:
+        tumor = np.expm1(tumor)
+    print("Transforming tumor data...")
+    glist_keep = []
+    for num, i in enumerate(gene_sig.index.values):
+        if i in tumor.columns:
+            glist_keep.append(i)
+    gene_sig = gene_sig.loc[gene_sig.index.isin(glist_keep)]
+    if np.all(np.linalg.norm(gene_sig, axis=0) != 1 - eps):
+        print("Renormalizing gene signature")
+        gene_sig = gene_sig / np.linalg.norm(gene_sig, axis=0)
+    print("Gene signature matrix now has shape: ", gene_sig.shape)
+    tumor = tumor[gene_sig.index.values]
+
+    lanorm = np.linalg.norm(tumor, axis=1)
+    tumorx = (tumor.T / np.linalg.norm(tumor, axis=1)).T
+    data = pd.DataFrame(tumorx, columns=tumor.columns, index=tumor.index)
+
+    df_inv, resid, rank, sing_values = np.linalg.lstsq(gene_sig, np.array(data).T)
+    out = pd.DataFrame(df_inv.T)
+    # out = np.arcsinh((out))
+    if scale == True:
+        out = out / scaling
+    return out, gene_sig, tumor, lanorm
+
 def transform_tumor_space(adata, gene_sig, unlog = False, type = None, scale = False, scaling = None, spliced = False, eps = 0.001):
     tumor = adata.copy()
     if unlog == True:
