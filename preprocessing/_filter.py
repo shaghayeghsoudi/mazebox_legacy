@@ -135,10 +135,10 @@ def dropkick_recipe(adatas, batch_key,
 
     scv.tl.score_genes_cell_cycle(adata)
     sc.tl.pca(adata, n_comps=50, use_highly_variable=True)
-    if plot:
-        sc.pl.pca(adata, color=[ "pct_counts_mito", "phase", batch_key])
-    if write:
-        adata.write_h5ad(f"{settings.writedir}adata_dropkick{fname}.{settings.file_format_data}")
+    # if plot:
+    #     sc.pl.pca(adata, color=[ "pct_counts_mito", "phase", batch_key])
+    # if write:
+    #     adata.write_h5ad(f"{settings.writedir}adata_dropkick{fname}.{settings.file_format_data}")
     return adata
 
 def scanpy_recipe(adata, retain_genes, min_genes = 200, min_cells = 3):
