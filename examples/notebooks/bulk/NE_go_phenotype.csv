@@ -1,0 +1,440 @@
+,NE,ont,name,level
+GO:0006810,True,BP,transport,3
+GO:0051234,True,BP,establishment of localization,2
+GO:0008104,True,BP,protein localization,3
+GO:0045184,True,BP,establishment of protein localization,4
+GO:0043603,True,BP,cellular amide metabolic process,4
+GO:0051641,True,BP,cellular localization,2
+GO:0042886,True,BP,amide transport,5
+GO:0015833,True,BP,peptide transport,5
+GO:0015031,True,BP,protein transport,4
+GO:0006518,True,BP,peptide metabolic process,4
+GO:0051649,True,BP,establishment of localization in cell,3
+GO:0046907,True,BP,intracellular transport,3
+GO:0071705,True,BP,nitrogen compound transport,4
+GO:0033036,True,BP,macromolecule localization,2
+GO:0034613,True,BP,cellular protein localization,4
+GO:0070727,True,BP,cellular macromolecule localization,3
+GO:0006091,True,BP,generation of precursor metabolites and energy,3
+GO:0010243,True,BP,response to organonitrogen compound,4
+GO:0009719,True,BP,response to endogenous stimulus,2
+GO:0046903,True,BP,secretion,4
+GO:0010033,True,BP,response to organic substance,3
+GO:0009894,True,BP,regulation of catabolic process,4
+GO:1901698,True,BP,response to nitrogen compound,3
+GO:0032940,True,BP,secretion by cell,2
+GO:0009892,True,BP,negative regulation of metabolic process,4
+GO:0044237,True,BP,cellular metabolic process,2
+GO:0022900,True,BP,electron transport chain,3
+GO:0010605,True,BP,negative regulation of macromolecule metabolic process,5
+GO:0046034,True,BP,ATP metabolic process,4
+GO:0043604,True,BP,amide biosynthetic process,5
+GO:0031329,True,BP,regulation of cellular catabolic process,5
+GO:0009141,True,BP,nucleoside triphosphate metabolic process,5
+GO:0006887,True,BP,exocytosis,3
+GO:0006886,True,BP,intracellular protein transport,4
+GO:1901564,True,BP,organonitrogen compound metabolic process,3
+GO:1901700,True,BP,response to oxygen-containing compound,3
+GO:0042221,True,BP,response to chemical,2
+GO:0007005,True,BP,mitochondrion organization,4
+GO:0045055,True,BP,regulated exocytosis,4
+GO:0044092,True,BP,negative regulation of molecular function,3
+GO:0009259,True,BP,ribonucleotide metabolic process,5
+GO:0072657,True,BP,protein localization to membrane,5
+GO:0061919,True,BP,process utilizing autophagic mechanism,2
+GO:0006914,True,BP,autophagy,4
+GO:0071702,True,BP,organic substance transport,4
+GO:0023061,True,BP,signal release,3
+GO:0031324,True,BP,negative regulation of cellular metabolic process,5
+GO:0043043,True,BP,peptide biosynthetic process,5
+GO:0042773,True,BP,ATP synthesis coupled electron transport,5
+GO:0009408,True,BP,response to heat,3
+GO:0019693,True,BP,ribose phosphate metabolic process,4
+GO:0016192,True,BP,vesicle-mediated transport,4
+GO:0065008,True,BP,regulation of biological quality,2
+GO:0044248,True,BP,cellular catabolic process,3
+GO:0033365,True,BP,protein localization to organelle,5
+GO:0009123,True,BP,nucleoside monophosphate metabolic process,5
+GO:0006119,True,BP,oxidative phosphorylation,4
+GO:0071495,True,BP,cellular response to endogenous stimulus,3
+GO:0009056,True,BP,catabolic process,2
+GO:0006163,True,BP,purine nucleotide metabolic process,5
+GO:0009117,True,BP,nucleotide metabolic process,5
+GO:0032879,True,BP,regulation of localization,3
+GO:0006996,True,BP,organelle organization,3
+GO:0006412,True,BP,translation,5
+GO:0006812,True,BP,cation transport,5
+GO:0006753,True,BP,nucleoside phosphate metabolic process,4
+GO:0090662,True,BP,ATP hydrolysis coupled transmembrane transport,5
+GO:0072521,True,BP,purine-containing compound metabolic process,4
+GO:0051172,True,BP,negative regulation of nitrogen compound metabolic process,5
+GO:0051656,True,BP,establishment of organelle localization,3
+GO:0090150,True,BP,establishment of protein localization to membrane,4
+GO:0055114,True,BP,oxidation-reduction process,2
+GO:0006120,True,BP,"mitochondrial electron transport, NADH to ubiquinone",5
+GO:0048519,True,BP,negative regulation of biological process,3
+GO:0022904,True,BP,respiratory electron transport chain,4
+GO:0072594,True,BP,establishment of protein localization to organelle,4
+GO:0055086,True,BP,nucleobase-containing small molecule metabolic process,3
+GO:0034248,True,BP,regulation of cellular amide metabolic process,5
+GO:0031647,True,BP,regulation of protein stability,3
+GO:1901566,True,BP,organonitrogen compound biosynthetic process,4
+GO:0032268,True,BP,regulation of cellular protein metabolic process,5
+GO:0070887,True,BP,cellular response to chemical stimulus,3
+GO:1901701,True,BP,cellular response to oxygen-containing compound,4
+GO:0045333,True,BP,cellular respiration,4
+GO:0043086,True,BP,negative regulation of catalytic activity,4
+GO:0051049,True,BP,regulation of transport,4
+GO:0051246,True,BP,regulation of protein metabolic process,5
+GO:0016236,True,BP,macroautophagy,4
+GO:0017144,True,BP,drug metabolic process,3
+GO:0051650,True,BP,establishment of vesicle localization,4
+GO:0009266,True,BP,response to temperature stimulus,3
+GO:0034641,True,BP,cellular nitrogen compound metabolic process,3
+GO:0010035,True,BP,response to inorganic substance,3
+GO:0009914,True,BP,hormone transport,4
+GO:0015980,True,BP,energy derivation by oxidation of organic compounds,3
+GO:0010646,True,BP,regulation of cell communication,4
+GO:0030163,True,BP,protein catabolic process,4
+GO:0051640,True,BP,organelle localization,3
+GO:0009628,True,BP,response to abiotic stimulus,2
+GO:0043462,True,BP,regulation of ATPase activity,5
+GO:0099504,True,BP,synaptic vesicle cycle,4
+GO:0010817,True,BP,regulation of hormone levels,3
+GO:0099177,True,BP,regulation of trans-synaptic signaling,4
+GO:0006413,True,BP,translational initiation,3
+GO:0051648,True,BP,vesicle localization,4
+GO:0071310,True,BP,cellular response to organic substance,4
+GO:0044085,True,BP,cellular component biogenesis,2
+GO:0022607,True,BP,cellular component assembly,3
+GO:0023051,True,BP,regulation of signaling,3
+GO:0006457,True,BP,protein folding,2
+GO:0046879,True,BP,hormone secretion,4
+GO:0009057,True,BP,macromolecule catabolic process,4
+GO:0044281,True,BP,small molecule metabolic process,2
+GO:0009725,True,BP,response to hormone,3
+GO:0016043,True,BP,cellular component organization,2
+GO:0030073,True,BP,insulin secretion,4
+GO:0065009,True,BP,regulation of molecular function,2
+GO:0006836,True,BP,neurotransmitter transport,4
+GO:0060341,True,BP,regulation of cellular localization,4
+GO:0042493,True,BP,response to drug,3
+GO:0032880,True,BP,regulation of protein localization,4
+GO:0001505,True,BP,regulation of neurotransmitter levels,3
+GO:0098693,True,BP,regulation of synaptic vesicle cycle,5
+GO:0007269,True,BP,neurotransmitter secretion,4
+GO:0099643,True,BP,signal release from synapse,4
+GO:0043299,True,BP,leukocyte degranulation,3
+GO:0030072,True,BP,peptide hormone secretion,5
+GO:0050790,True,BP,regulation of catalytic activity,3
+GO:0048523,True,BP,negative regulation of cellular process,4
+GO:0048193,True,BP,Golgi vesicle transport,5
+GO:0031503,True,BP,protein-containing complex localization,2
+GO:0043933,True,BP,protein-containing complex subunit organization,3
+GO:0035966,True,BP,response to topologically incorrect protein,3
+GO:0002275,True,BP,myeloid cell activation involved in immune response,4
+GO:1901565,True,BP,organonitrogen compound catabolic process,4
+GO:0016079,True,BP,synaptic vesicle exocytosis,5
+GO:0051128,True,BP,regulation of cellular component organization,4
+GO:0006066,True,BP,alcohol metabolic process,3
+GO:0044267,True,BP,cellular protein metabolic process,4
+GO:0006986,True,BP,response to unfolded protein,4
+GO:1901699,True,BP,cellular response to nitrogen compound,4
+GO:0030705,True,BP,cytoskeleton-dependent intracellular transport,4
+GO:0002444,True,BP,myeloid leukocyte mediated immunity,4
+GO:0007399,True,BP,nervous system development,4
+GO:0019637,True,BP,organophosphate metabolic process,3
+GO:0071453,True,BP,cellular response to oxygen levels,4
+GO:0043312,True,BP,neutrophil degranulation,4
+GO:1901575,True,BP,organic substance catabolic process,3
+GO:0060548,True,BP,negative regulation of cell death,5
+GO:0048489,True,BP,synaptic vesicle transport,4
+GO:0097480,True,BP,establishment of synaptic vesicle localization,5
+GO:0070201,True,BP,regulation of establishment of protein localization,5
+GO:0071417,True,BP,cellular response to organonitrogen compound,4
+GO:0046883,True,BP,regulation of hormone secretion,4
+GO:0010038,True,BP,response to metal ion,4
+GO:0048857,True,BP,neural nucleus development,3
+GO:0055085,True,BP,transmembrane transport,4
+GO:0010941,True,BP,regulation of cell death,4
+GO:0051604,True,BP,protein maturation,4
+GO:0099111,True,BP,microtubule-based transport,4
+GO:0010970,True,BP,transport along microtubule,5
+GO:0044419,True,BP,interspecies interaction between organisms,2
+GO:0043067,True,BP,regulation of programmed cell death,5
+GO:0002446,True,BP,neutrophil mediated immunity,5
+GO:1903530,True,BP,regulation of secretion by cell,4
+GO:1901653,True,BP,cellular response to peptide,5
+GO:0006915,True,BP,apoptotic process,4
+GO:0061024,True,BP,membrane organization,3
+GO:0090151,True,BP,establishment of protein localization to mitochondrial membrane,4
+GO:0061684,True,BP,chaperone-mediated autophagy,4
+GO:0036230,True,BP,granulocyte activation,4
+GO:0051098,True,BP,regulation of binding,3
+GO:0003357,True,BP,noradrenergic neuron differentiation,5
+GO:0006888,True,BP,ER to Golgi vesicle-mediated transport,4
+GO:0070848,True,BP,response to growth factor,4
+GO:0097479,True,BP,synaptic vesicle localization,5
+GO:0071375,True,BP,cellular response to peptide hormone stimulus,5
+GO:1901615,True,BP,organic hydroxy compound metabolic process,3
+GO:0042176,True,BP,regulation of protein catabolic process,5
+GO:0051046,True,BP,regulation of secretion,5
+GO:0032870,True,BP,cellular response to hormone stimulus,4
+GO:0044265,True,BP,cellular macromolecule catabolic process,4
+GO:1902653,True,BP,secondary alcohol biosynthetic process,5
+GO:0044403,True,BP,symbiont process,3
+GO:0016050,True,BP,vesicle organization,4
+GO:0043434,True,BP,response to peptide hormone,4
+GO:0051588,True,BP,regulation of neurotransmitter transport,5
+GO:0048585,True,BP,negative regulation of response to stimulus,4
+GO:1901652,True,BP,response to peptide,4
+GO:0051066,True,BP,dihydrobiopterin metabolic process,5
+GO:0050821,True,BP,protein stabilization,4
+GO:0002274,True,BP,myeloid leukocyte activation,4
+GO:0019222,True,BP,regulation of metabolic process,3
+GO:0034622,True,BP,cellular protein-containing complex assembly,5
+GO:0051341,True,BP,regulation of oxidoreductase activity,4
+GO:0032984,True,BP,protein-containing complex disassembly,4
+GO:0007267,True,BP,cell-cell signaling,2
+GO:0016126,True,BP,sterol biosynthetic process,5
+GO:0032868,True,BP,response to insulin,5
+GO:0006811,True,BP,ion transport,4
+GO:0016486,True,BP,peptide hormone processing,3
+GO:0099003,True,BP,vesicle-mediated transport in synapse,5
+GO:1903008,True,BP,organelle disassembly,4
+GO:0006807,True,BP,nitrogen compound metabolic process,2
+GO:0033555,True,BP,multicellular organismal response to stress,2
+GO:0009267,True,BP,cellular response to starvation,4
+GO:0048167,True,BP,regulation of synaptic plasticity,3
+GO:0022417,True,BP,protein maturation by protein folding,3
+GO:0051342,True,BP,regulation of cyclic-nucleotide phosphodiesterase activity,5
+GO:0009968,True,BP,negative regulation of signal transduction,5
+GO:0008219,True,BP,cell death,2
+GO:0042423,True,BP,catecholamine biosynthetic process,5
+GO:0061025,True,BP,membrane fusion,4
+GO:0012501,True,BP,programmed cell death,3
+GO:0051336,True,BP,regulation of hydrolase activity,4
+GO:0046165,True,BP,alcohol biosynthetic process,4
+GO:0051101,True,BP,regulation of DNA binding,4
+GO:0051346,True,BP,negative regulation of hydrolase activity,5
+GO:0051353,True,BP,positive regulation of oxidoreductase activity,5
+GO:0019935,True,BP,cyclic-nucleotide-mediated signaling,5
+GO:0034220,True,BP,ion transmembrane transport,5
+GO:0051186,True,BP,cofactor metabolic process,3
+GO:1901135,True,BP,carbohydrate derivative metabolic process,3
+GO:0071704,True,BP,organic substance metabolic process,2
+GO:0036500,True,BP,ATF6-mediated unfolded protein response,4
+GO:0042594,True,BP,response to starvation,3
+GO:0010648,True,BP,negative regulation of cell communication,5
+GO:0034605,True,BP,cellular response to heat,4
+GO:0042769,True,BP,"DNA damage response, detection of DNA damage",3
+GO:2000300,True,BP,regulation of synaptic vesicle exocytosis,5
+GO:0023057,True,BP,negative regulation of signaling,4
+GO:0046928,True,BP,regulation of neurotransmitter secretion,4
+GO:0031629,True,BP,synaptic vesicle fusion to presynaptic active zone membrane,4
+GO:0016032,True,BP,viral process,4
+GO:0048522,True,BP,positive regulation of cellular process,4
+GO:0019538,True,BP,protein metabolic process,3
+GO:0007017,True,BP,microtubule-based process,2
+GO:0006793,True,BP,phosphorus metabolic process,3
+GO:0042026,True,BP,protein refolding,3
+GO:0140029,True,BP,exocytic process,2
+GO:0099500,True,BP,vesicle fusion to plasma membrane,3
+GO:0043388,True,BP,positive regulation of DNA binding,5
+GO:0042149,True,BP,cellular response to glucose starvation,5
+GO:0050789,True,BP,regulation of biological process,2
+GO:0061107,True,BP,seminal vesicle development,4
+GO:0003358,True,BP,noradrenergic neuron development,5
+GO:0044502,True,BP,positive regulation of signal transduction in other organism,5
+GO:0018125,True,BP,peptidyl-cysteine methylation,5
+GO:0006735,True,BP,NADH regeneration,3
+GO:0061621,True,BP,canonical glycolysis,4
+GO:0090087,True,BP,regulation of peptide transport,5
+GO:0006796,True,BP,phosphate-containing compound metabolic process,4
+GO:0098916,True,BP,anterograde trans-synaptic signaling,5
+GO:0021762,True,BP,substantia nigra development,4
+GO:0008203,True,BP,cholesterol metabolic process,5
+GO:0051051,True,BP,negative regulation of transport,4
+GO:0042416,True,BP,dopamine biosynthetic process,5
+GO:0048169,True,BP,regulation of long-term neuronal synaptic plasticity,5
+GO:0002366,True,BP,leukocyte activation involved in immune response,4
+GO:0065003,True,BP,protein-containing complex assembly,4
+GO:0099537,True,BP,trans-synaptic signaling,4
+GO:0071363,True,BP,cellular response to growth factor stimulus,5
+GO:0002263,True,BP,cell activation involved in immune response,3
+GO:0019319,True,BP,hexose biosynthetic process,5
+GO:0006006,True,BP,glucose metabolic process,5
+GO:0036465,True,BP,synaptic vesicle recycling,4
+GO:0048207,True,BP,"vesicle targeting, rough ER to cis-Golgi",4
+GO:1902652,True,BP,secondary alcohol metabolic process,4
+GO:0099536,True,BP,synaptic signaling,3
+GO:0010647,True,BP,positive regulation of cell communication,5
+GO:0008277,True,BP,regulation of G protein-coupled receptor signaling pathway,5
+GO:0006906,True,BP,vesicle fusion,5
+GO:0006995,True,BP,cellular response to nitrogen starvation,5
+GO:0043562,True,BP,cellular response to nitrogen levels,5
+GO:1990778,True,BP,protein localization to cell periphery,5
+GO:0044271,True,BP,cellular nitrogen compound biosynthetic process,4
+GO:0023056,True,BP,positive regulation of signaling,4
+GO:0007154,True,BP,cell communication,2
+GO:0044257,True,BP,cellular protein catabolic process,5
+GO:0014075,True,BP,response to amine,5
+GO:0048699,True,BP,generation of neurons,5
+GO:0031667,True,BP,response to nutrient levels,4
+GO:0007167,True,BP,enzyme linked receptor protein signaling pathway,4
+GO:0060627,True,BP,regulation of vesicle-mediated transport,4
+GO:0044093,True,BP,positive regulation of molecular function,3
+GO:0048518,True,BP,positive regulation of biological process,3
+GO:0022008,True,BP,neurogenesis,4
+GO:0006901,True,BP,vesicle coating,5
+GO:0007018,True,BP,microtubule-based movement,3
+GO:0046364,True,BP,monosaccharide biosynthetic process,4
+GO:0036295,True,BP,cellular response to increased oxygen levels,5
+GO:0019646,True,BP,aerobic electron transport chain,5
+GO:0022411,True,BP,cellular component disassembly,3
+GO:0019725,True,BP,cellular homeostasis,2
+GO:0010498,True,BP,proteasomal protein catabolic process,5
+GO:0031323,True,BP,regulation of cellular metabolic process,4
+GO:1901617,True,BP,organic hydroxy compound biosynthetic process,4
+GO:0090174,True,BP,organelle membrane fusion,5
+GO:0048168,True,BP,regulation of neuronal synaptic plasticity,4
+GO:0048265,True,BP,response to pain,4
+GO:0009415,True,BP,response to water,3
+GO:0060347,True,BP,heart trabecula formation,4
+GO:0032988,True,BP,ribonucleoprotein complex disassembly,5
+GO:0032386,True,BP,regulation of intracellular transport,5
+GO:0044283,True,BP,small molecule biosynthetic process,3
+GO:0044238,True,BP,primary metabolic process,2
+GO:0048199,True,BP,"vesicle targeting, to, from or within Golgi",3
+GO:0016310,True,BP,phosphorylation,5
+GO:0055082,True,BP,cellular chemical homeostasis,3
+GO:0016125,True,BP,sterol metabolic process,4
+GO:1990089,True,BP,response to nerve growth factor,3
+GO:0051603,True,BP,proteolysis involved in cellular protein catabolic process,5
+GO:0006979,True,BP,response to oxidative stress,3
+GO:0035967,True,BP,cellular response to topologically incorrect protein,4
+GO:0036294,True,BP,cellular response to decreased oxygen levels,5
+GO:0042744,True,BP,hydrogen peroxide catabolic process,5
+GO:0043618,True,BP,regulation of transcription from RNA polymerase II promoter in response to stress,5
+GO:0097190,True,BP,apoptotic signaling pathway,3
+GO:0006732,True,BP,coenzyme metabolic process,4
+GO:0071333,True,BP,cellular response to glucose stimulus,5
+GO:0051284,True,BP,positive regulation of sequestering of calcium ion,4
+GO:0046390,True,BP,ribose phosphate biosynthetic process,5
+GO:0006584,True,BP,catecholamine metabolic process,4
+GO:0009712,True,BP,catechol-containing compound metabolic process,5
+GO:0031016,True,BP,pancreas development,4
+GO:0032411,True,BP,positive regulation of transporter activity,4
+GO:0048878,True,BP,chemical homeostasis,4
+GO:0044501,True,BP,modulation of signal transduction in other organism,4
+GO:0048790,True,BP,maintenance of presynaptic active zone structure,4
+GO:0052250,True,BP,modulation of signal transduction in other organism involved in symbiotic interaction,5
+GO:0045338,True,BP,farnesyl diphosphate metabolic process,5
+GO:0035617,True,BP,stress granule disassembly,5
+GO:0051100,True,BP,negative regulation of binding,4
+GO:0140238,True,BP,presynaptic endocytosis,4
+GO:0006508,True,BP,proteolysis,4
+GO:0061387,True,BP,regulation of extent of cell growth,5
+GO:0048194,True,BP,Golgi vesicle budding,5
+GO:0009991,True,BP,response to extracellular stimulus,3
+GO:0009895,True,BP,negative regulation of catabolic process,5
+GO:0070670,True,BP,response to interleukin-4,5
+GO:0043085,True,BP,positive regulation of catalytic activity,4
+GO:0031669,True,BP,cellular response to nutrient levels,4
+GO:0061178,True,BP,regulation of insulin secretion involved in cellular response to glucose stimulus,4
+GO:0034620,True,BP,cellular response to unfolded protein,5
+GO:0043620,True,BP,regulation of DNA-templated transcription in response to stress,4
+GO:0044106,True,BP,cellular amine metabolic process,4
+GO:0007169,True,BP,transmembrane receptor protein tyrosine kinase signaling pathway,5
+GO:0010523,True,BP,negative regulation of calcium ion transport into cytosol,4
+GO:0033762,True,BP,response to glucagon,5
+GO:0030182,True,BP,neuron differentiation,4
+GO:0060291,True,BP,long-term synaptic potentiation,4
+GO:0048583,True,BP,regulation of response to stimulus,3
+GO:0033500,True,BP,carbohydrate homeostasis,5
+GO:0033238,True,BP,regulation of cellular amine metabolic process,5
+GO:0006928,True,BP,movement of cell or subcellular component,2
+GO:2000377,True,BP,regulation of reactive oxygen species metabolic process,5
+GO:0071322,True,BP,cellular response to carbohydrate stimulus,5
+GO:0034976,True,BP,response to endoplasmic reticulum stress,4
+GO:0061077,True,BP,chaperone-mediated protein folding,3
+GO:0035418,True,BP,protein localization to synapse,4
+GO:0022898,True,BP,regulation of transmembrane transporter activity,4
+GO:1901361,True,BP,organic cyclic compound catabolic process,4
+GO:0009890,True,BP,negative regulation of biosynthetic process,5
+GO:0009966,True,BP,regulation of signal transduction,4
+GO:0035690,True,BP,cellular response to drug,4
+GO:0043269,True,BP,regulation of ion transport,5
+GO:0048731,True,BP,system development,3
+GO:0043632,True,BP,modification-dependent macromolecule catabolic process,5
+GO:0019318,True,BP,hexose metabolic process,4
+GO:0034643,True,BP,"establishment of mitochondrion localization, microtubule-mediated",4
+GO:0046794,True,BP,transport of virus,4
+GO:0010042,True,BP,response to manganese ion,5
+GO:0047497,True,BP,mitochondrion transport along microtubule,5
+GO:0019439,True,BP,aromatic compound catabolic process,4
+GO:0001678,True,BP,cellular glucose homeostasis,4
+GO:0048675,True,BP,axon extension,5
+GO:0042417,True,BP,dopamine metabolic process,4
+GO:1903827,True,BP,regulation of cellular protein localization,5
+GO:0002790,True,BP,peptide secretion,5
+GO:0010942,True,BP,positive regulation of cell death,5
+GO:0071456,True,BP,cellular response to hypoxia,4
+GO:0030968,True,BP,endoplasmic reticulum unfolded protein response,3
+GO:0035773,True,BP,insulin secretion involved in cellular response to glucose stimulus,4
+GO:0048485,True,BP,sympathetic nervous system development,4
+GO:0009308,True,BP,amine metabolic process,4
+GO:0009636,True,BP,response to toxic substance,3
+GO:0051099,True,BP,positive regulation of binding,4
+GO:0150093,True,BP,amyloid-beta clearance by transcytosis,3
+GO:0086023,True,BP,adenylate cyclase-activating adrenergic receptor signaling pathway involved in heart process,5
+GO:0019673,True,BP,GDP-mannose metabolic process,5
+GO:0009893,True,BP,positive regulation of metabolic process,4
+GO:0009306,True,BP,protein secretion,3
+GO:0032409,True,BP,regulation of transporter activity,3
+GO:0071826,True,BP,ribonucleoprotein complex subunit organization,4
+GO:0005996,True,BP,monosaccharide metabolic process,3
+GO:0034614,True,BP,cellular response to reactive oxygen species,5
+GO:0071248,True,BP,cellular response to metal ion,5
+GO:0034655,True,BP,nucleobase-containing compound catabolic process,4
+GO:0006903,True,BP,vesicle targeting,2
+GO:0048278,True,BP,vesicle docking,4
+GO:0048513,True,BP,animal organ development,3
+GO:0044706,True,BP,multi-multicellular organism process,2
+GO:0009108,True,BP,coenzyme biosynthetic process,5
+GO:0001775,True,BP,cell activation,2
+GO:1905037,True,BP,autophagosome organization,5
+GO:0051187,True,BP,cofactor catabolic process,4
+GO:0048284,True,BP,organelle fusion,4
+GO:0019932,True,BP,second-messenger-mediated signaling,4
+GO:0051654,True,BP,establishment of mitochondrion localization,4
+GO:0034311,True,BP,diol metabolic process,5
+GO:0031648,True,BP,protein destabilization,4
+GO:0046189,True,BP,phenol-containing compound biosynthetic process,5
+GO:0046688,True,BP,response to copper ion,5
+GO:0042592,True,BP,homeostatic process,3
+GO:0060056,True,BP,mammary gland involution,3
+GO:1990709,True,BP,presynaptic active zone organization,3
+GO:0046146,True,BP,tetrahydrobiopterin metabolic process,4
+GO:0051639,True,BP,actin filament network formation,5
+GO:0006729,True,BP,tetrahydrobiopterin biosynthetic process,5
+GO:0051940,True,BP,regulation of catecholamine uptake involved in synaptic transmission,5
+GO:0051241,True,BP,negative regulation of multicellular organismal process,4
+GO:0007006,True,BP,mitochondrial membrane organization,4
+GO:0072593,True,BP,reactive oxygen species metabolic process,3
+GO:0090287,True,BP,regulation of cellular response to growth factor stimulus,4
+GO:0031018,True,BP,endocrine pancreas development,3
+GO:0006904,True,BP,vesicle docking involved in exocytosis,3
+GO:0030521,True,BP,androgen receptor signaling pathway,5
+GO:0042445,True,BP,hormone metabolic process,2
+GO:0051338,True,BP,regulation of transferase activity,4
+GO:0019430,True,BP,removal of superoxide radicals,4
+GO:0051354,True,BP,negative regulation of oxidoreductase activity,5
+GO:0010288,True,BP,response to lead ion,5
+GO:0007033,True,BP,vacuole organization,4
+GO:0097435,True,BP,supramolecular fiber organization,3
+GO:0031668,True,BP,cellular response to extracellular stimulus,3
+GO:0001101,True,BP,response to acid chemical,3
+GO:1901576,True,BP,organic substance biosynthetic process,3
+GO:0006984,True,BP,ER-nucleus signaling pathway,3
+GO:0051591,True,BP,response to cAMP,4
