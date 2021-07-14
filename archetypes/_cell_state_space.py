@@ -290,7 +290,7 @@ def transform_vel(tumor, gene_sig, norm = False, scale = False, scaling = None, 
     # out = np.arcsinh(out)
     return out, gene_sig, tumor
 
-def phenotyping_recipe(adata, sig_matrix,groupby,subtypes = ['SCLC-A', 'SCLC-A2', 'SCLC-N', 'SCLC-P', 'SCLC-Y'],
+def phenotyping_recipe(adata, sig_matrix,groupby,save_as= None,subtypes = ['SCLC-A', 'SCLC-A2', 'SCLC-N', 'SCLC-P', 'SCLC-Y'],
                        unlog = False, type = None, scale = False, eps = 0.001):
     """
     :param adata: AnnData object
@@ -298,8 +298,8 @@ def phenotyping_recipe(adata, sig_matrix,groupby,subtypes = ['SCLC-A', 'SCLC-A2'
     :param groupby: used to set groupby category in adata_small as dtype category
     :param subtypes: list of subtypes
     :param unlog:
-    :param type:
-    :param scale:
+    :param type: "csr" if sparse matrix, otherwise None
+    :param scale: if signature scores should be rescaled
     :param eps:
     :return:
         adata: original adata object with added attributes: Phenotype, x_Score, x_Score_t1, and x_Score_pos for each x in list of subtypes
@@ -339,19 +339,19 @@ def phenotyping_recipe(adata, sig_matrix,groupby,subtypes = ['SCLC-A', 'SCLC-A2'
     adata.obs['Phenotype'] = adata_small.obs['Phenotype']
 
     for i in subtypes:
-        adata.obs[f"{i}_Score_pos"] = adata.obs[f"{i}"] * (adata.obs[f"{i}_Score"] > 0)
+        adata.obs[f"{i}_Score_pos"] = adata.obs[f"{i}_Score"] * (adata.obs[f"{i}_Score"] > 0)
         plt.figure(figsize=(4, 4))
         ax = plt.subplot()
-        sns.boxplot(data=adata.obs, x='cline', y=f"{i}_Score_pos")
+        sns.boxplot(data=adata.obs, x=groupby, y=f"{i}_Score_pos")
         ax.set_xticklabels(ax.get_xticklabels(), rotation=90)
-        plt.savefig(f"./figures/clines/{i}.pdf")
-    cp = ['#fc8d62', '#66c2a5', '#FFD43B', '#8da0cb', '#e78ac3']
-    color_dict = {'SCLC-Y': cp[4], 'SCLC-A': cp[0], 'SCLC-A2': cp[1], 'SCLC-N': cp[2], 'SCLC-P': cp[3],
-                  'Generalist': 'darkgray', 'None': 'lightgrey'}
-    archetype_plots.archetype_diagrams(adata, sig_matrix, color_dict=color_dict, groupby='None', color='Phenotype',
-                             grid=False, mean_only=True,
-                             order=['SCLC-Y', 'SCLC-A', 'SCLC-P', 'SCLC-N', 'SCLC-A2'], norm='None', num_steps=40,
-                             multiplier=1, figsize=(4, 4), score_name='_Score', alpha=.8, s=4, sizes=20, arrows=True)
+        plt.savefig(f"./figures/{save_as}/{i}.pdf")
+    # cp = ['#fc8d62', '#66c2a5', '#FFD43B', '#8da0cb', '#e78ac3']
+    # color_dict = {'SCLC-Y': cp[4], 'SCLC-A': cp[0], 'SCLC-A2': cp[1], 'SCLC-N': cp[2], 'SCLC-P': cp[3],
+    #               'Generalist': 'darkgray', 'None': 'lightgrey'}
+    # archetype_plots.archetype_diagrams(adata, sig_matrix, color_dict=color_dict, groupby='None', color='Phenotype',
+    #                          grid=False, mean_only=True,
+    #                          order=['SCLC-Y', 'SCLC-A', 'SCLC-P', 'SCLC-N', 'SCLC-A2'], norm='None', num_steps=40,
+    #                          multiplier=1, figsize=(4, 4), score_name='_Score', alpha=.8, s=4, sizes=20, arrows=True)
 
     return adata, adata_small, sig_matrix2
 
