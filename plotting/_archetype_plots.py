@@ -12,7 +12,7 @@ import os.path as op
 def archetype_diagrams(adata, sig_matrix, color_dict, groupby, color= 'Phenotype_filtered', score_name = '_Z_Score',multiplier = 1000,mean_only = False,
                        order = None, figsize = (4,4), arrows = False, sizes = None,alpha = .3, s = 30, norm = 'max',scale = 1,cmap = 'viridis',
                        vmin = -1, vmax = 1,
-                       grid = True, num_steps=50):
+                       grid = True, num_steps=50, density = False):
     # cp = custom_palette[2:]
     # color_dict = {'SCLC-Y': cp[4], 'SCLC-A': cp[0], 'SCLC-A2': cp[1], 'SCLC-N': cp[2], 'SCLC-P': cp[3],
     #               'Mixed': 'darkgray', 'None': 'white'}
@@ -27,27 +27,27 @@ def archetype_diagrams(adata, sig_matrix, color_dict, groupby, color= 'Phenotype
 
             if arrows:
                 _archetype_diagram_with_arrows(_adata, score_name,subtypes, color, figsize, n_types,color_dict, order, multiplier,g = g,mean_only = mean_only,
-                                               cmap = cmap,
+                                               cmap = cmap,groupby = groupby,
                                                alpha = alpha, s = s, norm = norm, sizes = sizes, grid = grid, num_steps=num_steps)
             else:
                 _archetype_diagram_no_arrows(_adata, score_name,subtypes,  color, figsize, n_types, order, n_samples,
                                              multiplier, g=g, sizes = sizes, alpha = alpha, s = s, color_dict = color_dict,
-                                             norm = norm,cmap = cmap,vmax = vmax, vmin = vmin)
+                                             norm = norm,cmap = cmap,vmax = vmax, vmin = vmin, density = density)
     else:
         _adata = adata
         n_samples = len(_adata.obs_names)
 
         if arrows:
             _archetype_diagram_with_arrows(_adata, score_name, subtypes, color, figsize, n_types, color_dict, order,
-                                           multiplier,scale = scale,mean_only = mean_only,cmap = cmap,
+                                           multiplier,scale = scale,mean_only = mean_only,cmap = cmap,groupby=groupby,
                                            alpha=alpha, s=s, norm=norm, sizes=sizes, grid=grid, num_steps=num_steps)
         else:
             _archetype_diagram_no_arrows(_adata, score_name, subtypes, color, figsize, n_types, order, n_samples,
                                          multiplier,  sizes=sizes, alpha=alpha, s=s, color_dict=color_dict,
-                                         norm=norm,cmap = cmap,vmax = vmax, vmin = vmin)
+                                         norm=norm,cmap = cmap,vmax = vmax, vmin = vmin, density = density)
 def _archetype_diagram_with_arrows(_adata, score_name,subtypes, color, figsize, n_types, color_dict, order,multiplier, g = 'All',cmap = 'viridis',
                                    norm = 'max', alpha = .3, s = 3, width = 0.0005, sizes = 3, grid = True, num_steps = 50,scale = 1,
-                                   mean_only = False):
+                                   mean_only = False, groupby = 'timepoint'):
     #for arrows, we need to subtype a second timepoint based off of velocity.
 
 
@@ -118,8 +118,8 @@ def _archetype_diagram_with_arrows(_adata, score_name,subtypes, color, figsize, 
         data = data.sort_values(by = 'C', ascending=False)
 
         if mean_only:
-            for g in _adata.obs['timepoint'].cat.categories:
-                sub =  _adata[_adata.obs['timepoint'] == g].obs_names
+            for g in _adata.obs[groupby].cat.categories:
+                sub =  _adata[_adata.obs[groupby] == g].obs_names
                 _d = data.loc[sub]
                 plt.scatter(_d['X'].mean(), _d['Y'].mean(), c='k', zorder=3, alpha=alpha, s=s)
 
@@ -175,8 +175,8 @@ def _archetype_diagram_with_arrows(_adata, score_name,subtypes, color, figsize, 
             dx.index = _adata.obs_names
             dy.index = _adata.obs_names
 
-            for g in _adata.obs['timepoint'].cat.categories:
-                sub =  _adata[_adata.obs['timepoint'] == g].obs_names
+            for g in _adata.obs[groupby].cat.categories:
+                sub =  _adata[_adata.obs[groupby] == g].obs_names
                 _d = data.loc[sub]
                 plt.arrow(_d['X'].mean(), _d['Y'].mean(),dx.loc[sub].mean()*multiplier, dy.loc[sub].mean()*multiplier,
                           fc="black", ec="black", alpha = alpha, width = width)
@@ -196,7 +196,7 @@ def _archetype_diagram_with_arrows(_adata, score_name,subtypes, color, figsize, 
 
 def _archetype_diagram_no_arrows(_adata, score_name, subtypes, color, figsize, n_types, order, n_samples, multiplier, g='All',
                                  sizes = None, alpha = .3, s = 30, color_dict = None, norm = 'scale', cmap="viridis",
-                                 vmin = -1, vmax = 1):
+                                 vmin = -1, vmax = 1, density = False):
     # X = subtype scores for each subtype (pd dataframe)
     X = _adata.obs[[f"{x}{score_name}" for x in subtypes]]
     top = X.sum().sort_values(ascending=False)[:3]  # return a list of n largest element
@@ -265,27 +265,28 @@ def _archetype_diagram_no_arrows(_adata, score_name, subtypes, color, figsize, n
     plt.axis('tight')
     plt.show()
     plt.close()
-    # fig = plt.figure(figsize=figsize)
-    #
-    # ax = fig.add_subplot()
-    # colors = _adata.obs[color].values
-    # if type(colors[0]) == str:
-    #     c = [color_dict[i] for i in colors]
-    # else:
-    #     c = colors
-    # sns.kdeplot(X_df_data[0], X_df_data[1], cmap="Reds", shade=True, bw=.15)
-    # if type(sizes) == int:
-    #     plt.scatter(X_transformed[0, -n_types:], X_transformed[1, -n_types:], c=[color_dict[i] for i in order],
-    #                 zorder=2, s=sizes)
-    # else:
-    #     sizes = [Counter(colors)[i] * multiplier / n_samples for i in order]
-    #     print(sizes)
-    #     plt.scatter(X_transformed[0, -n_types:], X_transformed[1, -n_types:], c=[color_dict[i] for i in order],
-    #                 zorder=2, s=sizes)
-    # plt.title(g)
-    # plt.axis('tight')
-    # plt.show()
-    # plt.close()
+    if density:
+        fig = plt.figure(figsize=figsize)
+
+        ax = fig.add_subplot()
+        colors = _adata.obs[color].values
+        if type(colors[0]) == str:
+            c = [color_dict[i] for i in colors]
+        else:
+            c = colors
+        sns.kdeplot(X_df_data[0], X_df_data[1], cmap="Reds", shade=True, bw=.15)
+        if type(sizes) == int:
+            plt.scatter(X_transformed[0, -n_types:], X_transformed[1, -n_types:], c='k',
+                        zorder=2, s=sizes)
+        else:
+            sizes = [Counter(colors)[i] * multiplier / n_samples for i in order]
+            print(sizes)
+            plt.scatter(X_transformed[0, -n_types:], X_transformed[1, -n_types:], c=[color_dict[i] for i in order],
+                        zorder=2, s=sizes)
+        plt.title(g)
+        plt.axis('tight')
+        plt.show()
+        plt.close()
 
 
 

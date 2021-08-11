@@ -200,6 +200,8 @@ def extract_Q(P, connectivities = None, eps = 0.001, eigen = False, eps_eig = 1e
     Note that this does not assume that P is in the required format. It
     identifies the rows and columns that have a 1 in the diagonal and removes
     them.
+
+    If using on real data, set eigen = True to use the method used in scvelo.
     """
     if eigen:
         eigvecs_ends = eigs(P, eps=eps_eig, perc=[2, 98])[1]
@@ -364,6 +366,8 @@ def ctrp_simplified(data, vkey='velocity', groupby=None, groups=None, self_trans
         t_ind,r_ind = return_t_r_indices(T, connectivities = connectivities,eigen = True, eps = eps, eps_eig = eps_eig)
         R = T[t_ind.reshape(-1, 1), r_ind]
         N = compute_N(Q)
+
+        adata.uns[f"{cat}_TM"] = T ##added 8/6/21
 
         write_to_obs(adata, 'end_points', ends, cell_subset)
 
