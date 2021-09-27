@@ -23,6 +23,7 @@ def scanorama_recipe(adata, copy = False, groups = 'timepoints', correct = False
     all_sc = pd.DataFrame(all_s, index=all_ind)
     all_sc = all_sc.loc[adata.obs_names]
     adata.obsm["X_SC"] = np.array(all_sc)
+    print('added attribute X_SC with integrated data')
     if correct:
         first = corrected.pop(0)
         adata_SC = first.concatenate(corrected, batch_key=groups,

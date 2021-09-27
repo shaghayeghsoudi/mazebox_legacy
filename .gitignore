@@ -3,3 +3,10 @@
 *.h5ad
 examples/notebooks/bulk/data/single_cell_sclc.csv
 examples/notebooks/obsolete_unused_7-2021/.DS_Store
+.DS_Store
+examples/.DS_Store
+examples/data/.DS_Store
+examples/int/.DS_Store
+examples/notebooks/.DS_Store
+examples/notebooks/bulk/.DS_Store
+preprocessing/__pycache__/_integrate.cpython-37.pyc
