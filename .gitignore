@@ -11,3 +11,6 @@ examples/notebooks/.DS_Store
 examples/notebooks/bulk/.DS_Store
 preprocessing/__pycache__/_integrate.cpython-37.pyc
 *.pyc
+examples/.DS_Store
+*.pyc
+*.pyc
