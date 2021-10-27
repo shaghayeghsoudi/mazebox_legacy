@@ -356,7 +356,9 @@ def ctrp_simplified(data, vkey='velocity', groupby=None, groups=None, self_trans
         cell_subset = groups_to_bool(adata, groups=groups, groupby=groupby)
         _adata = adata if groups is None else adata[cell_subset]
         connectivities = get_connectivities(_adata, 'distances')
-
+       
+        ###########################
+        ### ALEX LOOK HERE
         T = scv.tl.transition_matrix(_adata, vkey=vkey, basis=basis, weight_diffusion=weight_diffusion,
                               scale_diffusion=scale_diffusion, self_transitions=self_transitions, backward=False)
         print('(' + groups + ')' if isinstance(groups, str) else '')
@@ -366,6 +368,7 @@ def ctrp_simplified(data, vkey='velocity', groupby=None, groups=None, self_trans
         t_ind,r_ind = return_t_r_indices(T, connectivities = connectivities,eigen = True, eps = eps, eps_eig = eps_eig)
         R = T[t_ind.reshape(-1, 1), r_ind]
         N = compute_N(Q)
+        ###########################
 
         adata.uns[f"{cat}_TM"] = T ##added 8/6/21
 
